@@ -13,7 +13,6 @@
 
 <script>
 import { mapActions } from 'vuex';
-import addAuction from '@/components/addAuction';
 import addAuctionModal from '@/components/addAucMod';
 import productCard from '@/components/productCard';
 export default {
@@ -21,7 +20,7 @@ export default {
   data() {
     return { needToAdd: false };
   },
-  components: { addAuction, productCard, addAuctionModal },
+  components: { productCard, addAuctionModal },
   computed: {
     products: function() {
       return this.$store.state.userProducts;

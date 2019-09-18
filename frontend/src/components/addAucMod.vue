@@ -103,7 +103,7 @@
 <script>
 import axios from 'axios';
 export default {
-  name: 'addAuction',
+  name: 'addAuctionMod',
   data() {
     return {
       uploadComplit: false,
