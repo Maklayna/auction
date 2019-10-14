@@ -56,13 +56,13 @@ router.post('/products', auth, async (req, res) => {
   const imageFormat = data.fileName.slice(data.fileName.lastIndexOf('.') + 1);
   const imagePath = `/${username}/${image.name}`;
   const tmbPath = `/${username}/tmb/${imageName}-tmb.${imageFormat}`;
-  await image.mv(`./backend/public${imagePath}`);
+  await image.mv(`./public${imagePath}`);
   sharp(image.data)
     .resize(200, 200, {
       fit: sharp.fit.inside,
       withoutEnlargement: true,
     })
-    .toFile(`./backend/public/${tmbPath}`);
+    .toFile(`./public/${tmbPath}`);
   const newProduct = new Product({
     tag: data.tag,
     user: _id,
